@@ -1,6 +1,16 @@
-# Restly
+<p align="center">
+  <img src="https://beemood.github.io/restly/libs/cli/assets/favicon.png" alt="Logo" />
+</p>
 
-Framework to build rest, socket, and graphql services
+# @restly/cli
+
+Cli tool
+
+## Install
+
+`pnpm add -D @restly/cli`
+
+`pnpm add -g @restly/cli`
 
 ## Funding
 
@@ -15,6 +25,6 @@ Thank you for using the library. It's an open-source project, and maintaining it
 - **Documentation** improvements to help users get the most out of the library.
 - **General maintenance** to keep the library running smoothly and securely.
 
-[Contact to the developer:](mailto:robert-brightline@gmail.com?subject=InquiryFromReadme-nest)
+[Contact to the developer:](mailto:robert.brightline@gmail.com?subject=InquiryFromReadme-utils)
 
 [Support the developer](https://cash.app/$puqlib)

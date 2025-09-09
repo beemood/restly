@@ -1,0 +1,70 @@
+{
+  "Export all files": {
+    "prefix": "..export-all",
+    "body": "// @index(['./**/*.ts', '!./**/*.{spec,test}.ts'], f => `export * from '${f.path}.js'`)",
+    "scope": "typescript"
+  },
+  "Executable files": {
+    "prefix": "..shebang",
+    "body": "#!/usr/bin/env ${1|node,ts-node|}",
+    "scope": "typescript,javascript"
+  },
+  "function": {
+    "prefix": "..function",
+    "body": ["export function $1(){ ", "", "", "}"],
+    "scope": "typescript,javascript"
+  },
+
+  "property decorator": {
+    "prefix": "..decorator",
+    "body": [
+      "export function $1($3): ${2|Property,Class,Method,Parameter|}Decorator {",
+      "  return (...args) => {",
+      "    $0",
+      "  };",
+      "}"
+    ],
+    "scope": "typescript,javascript"
+  },
+  "error": {
+    "prefix": "...error",
+    "body": [
+      "/**",
+      "* @group Errors",
+      "*/",
+      "export class $1Error extends BaseError {",
+      "  constructor(message = 'Error Message', context = 'error') {",
+      "    super(message, $1Error.name, context);",
+      "  }",
+      "}"
+    ],
+    "scope": "typescript"
+  },
+  "command": {
+    "prefix": "...command",
+    "body": [
+      "import { AbstractCommand } from './abstract-command';",
+      "",
+      "export type $1CommandOptions = {",
+      "  /**",
+      "   * Your name",
+      "   */",
+      "  name: string;",
+      "};",
+      "",
+      "export class $1Command extends AbstractCommand<$1CommandOptions> {",
+      "  override init() {",
+      "    this.program",
+      "      .command('$2')",
+      "      .description('$3')",
+      "      .requiredOption('-n, --name <string>, What is your name')",
+      "      .action(this.action);",
+      "  }",
+      "",
+      "  override action(options: $1CommandOptions) {",
+      "    console.log(`$1, ${options.name}`);",
+      "  }",
+      "}"
+    ]
+  }
+}

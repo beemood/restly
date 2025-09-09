@@ -1,0 +1,46 @@
+{
+  "Test": {
+    "prefix": "..test",
+    "body": [
+      "describe('$1', () => {",
+      "  it('$1', ()=> { ",
+      "     $0",
+      "  })",
+      "});"
+    ],
+    "scope": "typescript"
+  },
+  "Each test": {
+    "prefix": "..each-test",
+    "body": [
+      "describe('$1', () => {",
+      "  describe('returns', () => {",
+      "    it.each`",
+      "      value                   | returnValue",
+      "      ${''}                   | ${''}",
+      "    `(",
+      "      `$1(\\$value) should return \\$returnValue`,",
+      "      ({ value, returnValue }) => {",
+      "        expect($1(value)).toEqual(returnValue);",
+      "      }",
+      "    );",
+      "  });",
+      "",
+      "",
+      "  describe('throws', () => {",
+      "    it.each`",
+      "      value       | error",
+      "      ${''}       | \\${Error}",
+
+      "    `(",
+      "      `$1(\\$value) should throw \\$error `,",
+      "      ({ value, error }) => {",
+      "        expect(() => $1(value)).toThrow(error);",
+      "      }",
+      "    );",
+      "  });",
+      "});"
+    ],
+    "scope": "typescript"
+  }
+}
