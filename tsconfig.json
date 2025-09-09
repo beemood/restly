@@ -5,6 +5,18 @@
   "references": [
     {
       "path": "./libs/cli"
+    },
+    {
+      "path": "./libs/utils"
+    },
+    {
+      "path": "./libs/names"
+    },
+    {
+      "path": "./libs/types"
+    },
+    {
+      "path": "./libs/eslint-rules"
     }
   ]
 }

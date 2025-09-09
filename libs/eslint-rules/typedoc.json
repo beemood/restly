@@ -1,6 +1,6 @@
 {
-  "name": "<%- fileName %>",
+  "name": "eslint-rules",
   "entryPoints": ["./src/index.ts"],
   "favicon": "./favicon.png",
-  "out": "../../public/<%- directory %>"
+  "out": "../../public/libs/eslint-rules"
 }

@@ -1,22 +1,32 @@
 {
-  "version": "<%- mp.version %>",
-  "name": "<%- fullProjectName %>",
-  "displayName": "<%- fileName %>",
-  "description": "<%- fileName %>",
+  "version": "0.0.1",
+  "name": "@restly/utils",
+  "displayName": "utils",
+  "description": "utils",
   "license": "MIT",
   "keywords": [
     "beenest"
   ],
-  "homepage": "<%- mp.homepage %>/<%- directory %>",
-  "icon": "<%- mp.homepage %>/<%- directory %>/assets/favicon.png",
-  "author": <%- JSON.stringify(mp.author) %>,
-  "funding": <%- JSON.stringify(mp.funding) %>,
+  "homepage": "https://beemood.github.io/restly/libs/utils",
+  "icon": "https://beemood.github.io/restly/libs/utils/assets/favicon.png",
+  "author": {
+    "name": "Robert Brightline",
+    "email": "robert-brightline@gmail.com",
+    "url": "https://beemood.github.io/profile"
+  },
+  "funding": [
+    "https://cash.app/$puqlib"
+  ],
   "publishConfig": {
     "access": "public",
     "tag": "latest"
   },
-  "bugs": <%- JSON.stringify(mp.bugs) %>,
-  "sponsor": <%- JSON.stringify(mp.sponsor) %>,
+  "bugs": {
+    "email": "robert-brightline@gmail.com"
+  },
+  "sponsor": {
+    "url": "https://beemood.github.io"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -35,7 +45,7 @@
     "!**/*.tsbuildinfo"
   ],
   "nx": {
-    "sourceRoot": "<%- directory %>/src",
+    "sourceRoot": "libs/utils/src",
     "targets": {
       "build": {
         "executor": "@nx/js:swc",
@@ -43,9 +53,9 @@
           "{options.outputPath}"
         ],
         "options": {
-          "outputPath": "<%- directory %>/dist",
-          "main": "<%- directory %>/src/index.ts",
-          "tsConfig": "<%- directory %>/tsconfig.lib.json",
+          "outputPath": "libs/utils/dist",
+          "main": "libs/utils/src/index.ts",
+          "tsConfig": "libs/utils/tsconfig.lib.json",
           "skipTypeCheck": true,
           "stripLeadingPaths": true
         }

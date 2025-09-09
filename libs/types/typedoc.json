@@ -1,6 +1,6 @@
 {
-  "name": "<%- fileName %>",
+  "name": "types",
   "entryPoints": ["./src/index.ts"],
   "favicon": "./favicon.png",
-  "out": "../../public/<%- directory %>"
+  "out": "../../public/libs/types"
 }

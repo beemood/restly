@@ -1,20 +1,20 @@
 <p align="center">
-  <img src="<%- mp.homepage %>/<%- directory %>/assets/favicon.png" alt="Logo" />
+  <img src="https://beemood.github.io/restly/libs/utils/assets/favicon.png" alt="Logo" />
 </p>
 
-# <%- fullProjectName %>
+# @restly/utils
 
-<%- fileName %>
+utils
 
 ## Install
 
-`pnpm add <%- fullProjectName %>`
+`pnpm add @restly/utils`
 
 ## Funding
 
 Thank you for using the library. It's an open-source project, and maintaining it takes time and effort. If you find this library useful, please consider supporting its ongoing development. Your contributions help ensure that the project stays up-to-date, secure, and well-maintained.
 
-[Instant Funding](<%- mp.funding[0] %>)
+[Instant Funding](https://cash.app/$puqlib)
 
 ## Your funding will go toward
 
@@ -23,6 +23,6 @@ Thank you for using the library. It's an open-source project, and maintaining it
 - **Documentation** improvements to help users get the most out of the library.
 - **General maintenance** to keep the library running smoothly and securely.
 
-[Contact to the developer:](mailto:<%- mp.author.email %>?subject=InquiryFromReadme-<%- fileName %>)
+[Contact to the developer:](mailto:robert-brightline@gmail.com?subject=InquiryFromReadme-utils)
 
-[Support the developer](<%- mp.funding[0] %>)
+[Support the developer](https://cash.app/$puqlib)

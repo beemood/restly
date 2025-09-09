@@ -1,4 +1,5 @@
 import nx from '@nx/eslint-plugin';
+import * as restly from '@restly/eslint-rules';
 
 export default [
   ...nx.configs['flat/base'],
@@ -11,6 +12,17 @@ export default [
       parser: await import('jsonc-eslint-parser'),
     },
   },
+
+  {
+    files: ['**/*.ts'],
+    plugins: {
+      restly: restly.configs,
+    },
+    rules: {
+      'restly/controller-class-name': 'error',
+    },
+  },
+
   {
     ignores: [
       '**/dist',

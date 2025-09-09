@@ -1,22 +1,32 @@
 {
-  "version": "<%- mp.version %>",
-  "name": "<%- fullProjectName %>",
-  "displayName": "<%- fileName %>",
-  "description": "<%- fileName %>",
+  "version": "0.0.1",
+  "name": "@restly/eslint-rules",
+  "displayName": "eslint-rules",
+  "description": "eslint-rules",
   "license": "MIT",
   "keywords": [
     "beenest"
   ],
-  "homepage": "<%- mp.homepage %>/<%- directory %>",
-  "icon": "<%- mp.homepage %>/<%- directory %>/assets/favicon.png",
-  "author": <%- JSON.stringify(mp.author) %>,
-  "funding": <%- JSON.stringify(mp.funding) %>,
+  "homepage": "https://beemood.github.io/restly/libs/eslint-rules",
+  "icon": "https://beemood.github.io/restly/libs/eslint-rules/assets/favicon.png",
+  "author": {
+    "name": "Robert Brightline",
+    "email": "robert-brightline@gmail.com",
+    "url": "https://beemood.github.io/profile"
+  },
+  "funding": [
+    "https://cash.app/$puqlib"
+  ],
   "publishConfig": {
     "access": "public",
     "tag": "latest"
   },
-  "bugs": <%- JSON.stringify(mp.bugs) %>,
-  "sponsor": <%- JSON.stringify(mp.sponsor) %>,
+  "bugs": {
+    "email": "robert-brightline@gmail.com"
+  },
+  "sponsor": {
+    "url": "https://beemood.github.io"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -35,7 +45,7 @@
     "!**/*.tsbuildinfo"
   ],
   "nx": {
-    "sourceRoot": "<%- directory %>/src",
+    "sourceRoot": "libs/eslint-rules/src",
     "targets": {
       "build": {
         "executor": "@nx/js:swc",
@@ -43,9 +53,9 @@
           "{options.outputPath}"
         ],
         "options": {
-          "outputPath": "<%- directory %>/dist",
-          "main": "<%- directory %>/src/index.ts",
-          "tsConfig": "<%- directory %>/tsconfig.lib.json",
+          "outputPath": "libs/eslint-rules/dist",
+          "main": "libs/eslint-rules/src/index.ts",
+          "tsConfig": "libs/eslint-rules/tsconfig.lib.json",
           "skipTypeCheck": true,
           "stripLeadingPaths": true
         }
@@ -65,5 +75,8 @@
     "@nestjs/common": "^11.1.6",
     "@nestjs/config": "^4.0.2",
     "@swc/helpers": "~0.5.11"
+  },
+  "devDependencies": {
+    "@typescript-eslint/rule-tester": "^8.43.0"
   }
 }
