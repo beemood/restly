@@ -71,6 +71,9 @@
       }
     }
   },
+  "devDependencies": {
+    "@restly/types": "workspace:*"
+  },
   "dependencies": {
     "@nestjs/common": "^11.1.6",
     "@nestjs/config": "^4.0.2",

@@ -6,7 +6,7 @@ import { createNameRule } from '../common/create-name-rule.js';
 export const controllerClassNameRule = createNameRule(
   'controller-class-name',
   'problem',
-  /^\w{0,}Controller$/,
-  /^\w{0,}Controller$/,
+  /^.*Controller$/,
+  /^.*Controller$/,
   'Controller class name linter'
 );

@@ -1,0 +1,6 @@
+{
+  "name": "core",
+  "entryPoints": ["./src/index.ts"],
+  "favicon": "./favicon.png",
+  "out": "../../public/libs/core"
+}

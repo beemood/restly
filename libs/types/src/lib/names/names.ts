@@ -1,9 +1,20 @@
+/**
+ * Name variants
+ *
+ * @group Names
+ */
 export type Names = {
-  camel: string;
-  pascal: string;
-  title: string;
-  sentence: string;
   snake: string;
   kebab: string;
-  constant: string;
+  pascal: string;
+  camel: string;
+  screamingSnake: string;
+  title: string;
+  sentence: string;
+  upper: string;
+  lower: string;
+  className: string;
+  propertyName: string;
+  constantName: string;
+  fileName: string;
 };

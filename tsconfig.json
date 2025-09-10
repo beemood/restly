@@ -17,6 +17,15 @@
     },
     {
       "path": "./libs/eslint-rules"
+    },
+    {
+      "path": "./libs/common"
+    },
+    {
+      "path": "./libs/core"
+    },
+    {
+      "path": "./libs/testing"
     }
   ]
 }

@@ -6,11 +6,11 @@ import { controllerClassNameRule as rule } from './controller-class-name-rule.js
 
 // Create a new instance of RuleTester.
 // The key is to specify the parser to handle TypeScript syntax.
-const RULE_TESTER = new RuleTester();
+const ruleTester = new RuleTester();
 
 // Run the tests using the `ruleTester.run` method
 describe('controller-class-name', () => {
-  RULE_TESTER.run('controller-class-name', rule, {
+  ruleTester.run('controller-class-name', rule, {
     // Define the valid test cases
     valid: [
       {

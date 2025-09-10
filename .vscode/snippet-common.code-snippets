@@ -65,6 +65,12 @@
       "    console.log(`$1, ${options.name}`);",
       "  }",
       "}"
-    ]
+    ],
+    "scope": "typescript,javascript"
+  },
+  "special-chracters": {
+    "prefix": "...special-chracters",
+    "body": "/[_^!\"#$%&'()*+,-./:;<=>?@|`{}[\\]]{1,}/g",
+    "scope": "typescript,javascript"
   }
 }
