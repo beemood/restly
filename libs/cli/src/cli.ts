@@ -1,6 +1,6 @@
-import { Command, program } from 'commander';
+import { type Command, program } from 'commander';
 
-import { AbstractCommand } from './commands/abstract-command';
+import { type AbstractCommand } from './commands/abstract-command';
 import { HelloCommand } from './commands/hello.command';
 
 type CommandConstructor = { new (program: Command): AbstractCommand };

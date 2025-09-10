@@ -1,4 +1,4 @@
-import { Command } from 'commander';
+import { type Command } from 'commander';
 
 export abstract class AbstractCommand<Parameters = unknown> {
   constructor(protected readonly program: Command) {

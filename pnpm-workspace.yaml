@@ -1,5 +1,11 @@
 packages:
-  - 'apps/*'
-  - 'libs/*'
+  - apps/*
+  - libs/*
+
 autoInstallPeers: true
+
 strictPeerDependencies: false
+
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - nx

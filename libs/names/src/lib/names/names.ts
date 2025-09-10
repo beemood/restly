@@ -1,4 +1,4 @@
-import { Names } from '@restly/types';
+import { type Names } from '@restly/types';
 import { normalize } from '../helpers/normalize.js';
 import { upperCaseFirst } from '../helpers/upper-case-first.js';
 /**
