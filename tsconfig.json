@@ -26,6 +26,9 @@
     },
     {
       "path": "./libs/testing"
+    },
+    {
+      "path": "./libs/express"
     }
   ]
 }
