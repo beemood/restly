@@ -1,66 +1,84 @@
 import { Get as __Get } from '@nestjs/common';
+import { ApiOperation } from '@nestjs/swagger';
 import { names, pluralNames } from '@restly/names';
 import { InvalidComponentNameError } from '../../errors/invalid-component-name.error.js';
 import { inferResourceNameFromComponentName } from '../../names/component-name.js';
 
 export function Get(): MethodDecorator {
-  return (target, propertyKey, descriptor) => {
-    const name = inferResourceNameFromComponentName(target.constructor.name);
+  return (...args) => {
+    const className = args[0].constructor.name;
+    const name = inferResourceNameFromComponentName(className);
 
     const pluralNameVariants = pluralNames(name);
 
     if (names(name).fileName === pluralNameVariants.fileName) {
       throw new InvalidComponentNameError(
-        `${target.constructor.name} ( irregular plural name )`
+        `${className} ( irregular plural name )`
       );
     }
 
     const path = `${pluralNameVariants.fileName}`;
 
-    __Get(path)(target, propertyKey, descriptor);
+    ApiOperation({ summary: `Find ${pluralNameVariants.pascal}` })(...args);
+
+    __Get(path)(...args);
   };
 }
 
 export function GetBy(param: string): MethodDecorator {
-  return (target, propertyKey, descriptor) => {
-    const name = inferResourceNameFromComponentName(target.constructor.name);
+  return (...args) => {
+    const className = args[0].constructor.name;
+    const name = inferResourceNameFromComponentName(className);
     const pluralNameVariants = pluralNames(name);
 
     if (names(name).fileName === pluralNameVariants.fileName) {
       throw new InvalidComponentNameError(
-        `${target.constructor.name} ( irregular plural name )`
+        `${className} ( irregular plural name )`
       );
     }
 
     const path = `${pluralNameVariants.fileName}/:${param}`;
 
-    __Get(path)(target, propertyKey, descriptor);
+    ApiOperation({ summary: `Find ${pluralNameVariants.pascal} by ${param}` })(
+      ...args
+    );
+    __Get(path)(...args);
   };
 }
 export function GetOne(): MethodDecorator {
-  return (target, propertyKey, descriptor) => {
-    const name = inferResourceNameFromComponentName(target.constructor.name);
+  return (...args) => {
+    const className = args[0].constructor.name;
+    const name = inferResourceNameFromComponentName(className);
     const nameVariants = names(name);
     const path = `${nameVariants.fileName}`;
-    __Get(path)(target, propertyKey, descriptor);
+    ApiOperation({ summary: `Find ${nameVariants.pascal}` })(...args);
+    __Get(path)(...args);
   };
 }
 
 export function GetOneBy(param: string): MethodDecorator {
-  return (target, propertyKey, descriptor) => {
-    const name = inferResourceNameFromComponentName(target.constructor.name);
+  return (...args) => {
+    const className = args[0].constructor.name;
+    const name = inferResourceNameFromComponentName(className);
     const nameVariants = names(name);
     const path = `${nameVariants.fileName}/:${param}`;
-    __Get(path)(target, propertyKey, descriptor);
+
+    ApiOperation({ summary: `Find ${nameVariants.pascal} by ${param}` })(
+      ...args
+    );
+    __Get(path)(...args);
   };
 }
 
 export function GetOneById(): MethodDecorator {
-  return (target, propertyKey, descriptor) => {
-    const name = inferResourceNameFromComponentName(target.constructor.name);
+  return (...args) => {
+    const className = args[0].constructor.name;
+    const name = inferResourceNameFromComponentName(className);
     const nameVariants = names(name);
     const path = `${nameVariants.fileName}/:id`;
-    __Get(path)(target, propertyKey, descriptor);
+
+    ApiOperation({ summary: `Find ${nameVariants.pascal} by id` })(...args);
+    __Get(path)(...args);
   };
 }
 

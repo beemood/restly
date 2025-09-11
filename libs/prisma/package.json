@@ -58,7 +58,10 @@
           "tsConfig": "libs/prisma/tsconfig.lib.json",
           "skipTypeCheck": false,
           "stripLeadingPaths": true
-        }
+        },
+        "dependsOn": [
+          "build-deps"
+        ]
       },
       "doc": {
         "executor": "nx:run-commands",

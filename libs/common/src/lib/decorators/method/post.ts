@@ -1,31 +1,35 @@
 import { Post as __Post } from '@nestjs/common';
+import { ApiOperation } from '@nestjs/swagger';
 import { names, pluralNames } from '@restly/names';
 import { InvalidComponentNameError } from '../../errors/invalid-component-name.error.js';
 import { inferResourceNameFromComponentName } from '../../names/component-name.js';
 
 export function Post(): MethodDecorator {
-  return (target, propertyKey, descriptor) => {
-    const name = inferResourceNameFromComponentName(target.constructor.name);
+  return (...args) => {
+    const className = args[0].constructor.name;
+    const name = inferResourceNameFromComponentName(className);
 
     const pluralNameVariants = pluralNames(name);
-
     if (names(name).fileName === pluralNameVariants.fileName) {
       throw new InvalidComponentNameError(
-        `${target.constructor.name} ( irregular plural name )`
+        `${className} ( irregular plural name )`
       );
     }
-
     const path = `${pluralNameVariants.fileName}`;
-    __Post(path)(target, propertyKey, descriptor);
+    ApiOperation({ summary: `Create ${pluralNameVariants.pascal}` })(...args);
+    __Post(path)(...args);
   };
 }
 
 export function PostOne(): MethodDecorator {
-  return (target, propertyKey, descriptor) => {
-    const name = inferResourceNameFromComponentName(target.constructor.name);
+  return (...args) => {
+    const className = args[0].constructor.name;
+    const name = inferResourceNameFromComponentName(className);
     const nameVariants = names(name);
     const path = `${nameVariants.fileName}`;
-    __Post(path)(target, propertyKey, descriptor);
+
+    ApiOperation({ summary: `Create ${nameVariants.pascal}` })(...args);
+    __Post(path)(...args);
   };
 }
 
