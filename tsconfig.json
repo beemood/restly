@@ -22,7 +22,10 @@
       "path": "./libs/testing"
     },
     {
-      "path": "./libs/express"
+      "path": "./apps/inventory"
+    },
+    {
+      "path": "./libs/prisma"
     }
   ]
 }

@@ -56,7 +56,7 @@
           "outputPath": "libs/types/dist",
           "main": "libs/types/src/index.ts",
           "tsConfig": "libs/types/tsconfig.lib.json",
-          "skipTypeCheck": true,
+          "skipTypeCheck": false,
           "stripLeadingPaths": true
         }
       },

@@ -56,7 +56,7 @@
           "outputPath": "libs/names/dist",
           "main": "libs/names/src/index.ts",
           "tsConfig": "libs/names/tsconfig.lib.json",
-          "skipTypeCheck": true,
+          "skipTypeCheck": false,
           "stripLeadingPaths": true
         }
       },
@@ -75,8 +75,6 @@
     "@restly/types": "workspace:*"
   },
   "dependencies": {
-    "@nestjs/common": "^11.1.6",
-    "@nestjs/config": "^4.0.2",
     "@swc/helpers": "~0.5.11"
   }
 }

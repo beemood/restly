@@ -1,0 +1,86 @@
+{
+  "version": "0.0.1",
+  "name": "@restly/prisma",
+  "displayName": "prisma",
+  "description": "prisma",
+  "license": "MIT",
+  "keywords": [
+    "beenest"
+  ],
+  "homepage": "https://beemood.github.io/restly/libs/prisma",
+  "icon": "https://beemood.github.io/restly/libs/prisma/assets/favicon.png",
+  "author": {
+    "name": "Robert Brightline",
+    "email": "robert-brightline@gmail.com",
+    "url": "https://beemood.github.io/profile"
+  },
+  "funding": [
+    "https://cash.app/$puqlib"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "bugs": {
+    "email": "robert-brightline@gmail.com"
+  },
+  "sponsor": {
+    "url": "https://beemood.github.io"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "development": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo"
+  ],
+  "nx": {
+    "sourceRoot": "libs/prisma/src",
+    "targets": {
+      "build": {
+        "executor": "@nx/js:swc",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "outputPath": "libs/prisma/dist",
+          "main": "libs/prisma/src/index.ts",
+          "tsConfig": "libs/prisma/tsconfig.lib.json",
+          "skipTypeCheck": false,
+          "stripLeadingPaths": true
+        }
+      },
+      "doc": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            "npx typedoc"
+          ],
+          "cwd": "{projectRoot}"
+        }
+      }
+    }
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^11.1.6",
+    "@nestjs/config": "^4.0.2"
+  },
+  "dependencies": {
+    "@restly/common": "workspace:*",
+    "@restly/names": "workspace:*",
+    "@swc/helpers": "~0.5.11"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^11.1.6"
+  }
+}

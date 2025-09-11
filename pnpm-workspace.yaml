@@ -7,5 +7,9 @@ autoInstallPeers: true
 strictPeerDependencies: false
 
 onlyBuiltDependencies:
+  - '@nestjs/core'
   - '@parcel/watcher'
+  - '@prisma/client'
+  - '@prisma/engines'
   - nx
+  - prisma
